@@ -15,3 +15,15 @@ tab1
   }
   ```
 tab2
+
+science.json [similarly for tech.json, engineering.json and math.json]
+```json
+{
+  "topic1": {
+              "link-name": "link-name",
+              "link-url": "url",
+              "link-image": "image-url"
+              "tags: "topics"
+            }
+}
+```
