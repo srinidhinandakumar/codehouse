@@ -1,0 +1,54 @@
+{
+        "name": "animal facts",
+        "children": [
+            {
+                "name": "outdoor"
+            },
+            {
+                "name": "animal"
+            },
+            {
+                "name": "mammal"
+            },
+            {
+                "name": "water"
+            },
+            {
+                "name": "sitting"
+            },
+            {
+                "name": "standing"
+            },
+            {
+                "name": "looking"
+            },
+            {
+                "name": "brown"
+            },
+            {
+                "name": "small"
+            },
+            {
+                "name": "large"
+            },
+            {
+                "name": "dirt"
+            },
+            {
+                "name": "dog"
+            },
+            {
+                "name": "bird"
+            },
+            {
+                "name": "dirty"
+            },
+            {
+                "name": "cat"
+            },
+            {
+                "name": "field"
+            }
+        ],
+        "image_caption": "A close up of an animal"
+    }
