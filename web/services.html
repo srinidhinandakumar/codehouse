@@ -15,6 +15,24 @@
 
     <!-- Custom styles for this template -->
     <link href="css/heroic-features.css" rel="stylesheet">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+        function callservice(id)
+        {
+          console.log("inside");
+          console.log(id);
+          $.ajax({
+            url: "http://77a1c55d.ngrok.io/function/speech",
+            type: 'GET',
+            success: function(html) {
+                console.log(html);
+                $("#movie-data").append(JSON.stringify(data));
+                
+            }
+        });
+        }
+    </script> -->
 
   </head>
 
@@ -30,12 +48,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
+              <a class="nav-link" href="#">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
+              <a class="nav-link" href="#">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
@@ -50,21 +68,26 @@
 
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
-        <center><img class="card-img-top"  src="images/stem3.jpg" lt=""><br><h1 class="display-3">Fun with STEM</h1>
-        <p class="lead">Yes, you read that right! STEM can be fun and we will show you why.<br>Click on any of these images to learn more!</p></center>
+        <center><img class="card-img-top" style="height:70%; width:70%;" src="images/stem3.jpg" lt="">
+        <!-- <p class="lead">Yes, you read that right! STEM can be fun and we will show you why.<br>Click on any of these images to learn more!</p></center> -->
         <!-- <a href="#" class="btn btn-primary btn-lg">Call to action!</a> -->
       </header>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Services</li>
+          
+      </nav>
 
       <!-- Page Features -->
       <div class="row text-center">
 
         <div class="col-lg-3 col-md-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="../img/animal_facts.jpeg" lt="">
-            <!-- <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div> -->
+            <img class="card-img-top" src="../img/math.jpg" style="height:55%" lt="">
+            <div class="card-body">
+              <p class="card-text">Mathematics</p>
+              
+            </div>
             <div class="card-footer">
               <a href="html/animal_facts.html" class="btn btn-primary btn-sm">Find Out More!</a>
             </div>
@@ -73,13 +96,13 @@
 
         <div class="col-lg-3 col-md-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="../img/rocket.jpg" lt="">
-            <!-- <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div> -->
+            <img class="card-img-top" src="../img/science-exp.jpg" style="height:55%" lt="">
+            <div class="card-body">
+              <p class="card-text">Science Experiments</p>
+              
+            </div>
             <div class="card-footer">
-              <a href="html/rocket.html" class="btn btn-primary btn-sm">Find Out More!</a>
+              <a href="html/science-exp.html" class="btn btn-primary btn-sm">Find Out More!</a>
             </div>
           </div>
         </div>
@@ -99,7 +122,7 @@
 
         <div class="col-lg-3 col-md-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="../img/birds.jpeg" lt="">
+            <img class="card-img-top" src="../img/physics.jpeg" lt="">
             <!-- <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -112,7 +135,7 @@
 
          <div class="col-lg-3 col-md-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="../img/web.jpeg" lt="">
+            <img class="card-img-top" src="../img/bio.jpeg" lt="">
             <!-- <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -125,7 +148,7 @@
 
         <div class="col-lg-3 col-md-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="../img/laptop.jpeg" lt="">
+            <img class="card-img-top" src="../img/ml.png" lt="">
             <!-- <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -138,7 +161,7 @@
 
         <div class="col-lg-3 col-md-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="../img/mathkid.jpg" lt="">
+            <img class="card-img-top" src="../img/programming-basic.jpg" lt="">
             <!-- <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -151,7 +174,7 @@
 
         <div class="col-lg-3 col-md-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="../img/solar.jpeg" lt="">
+            <img class="card-img-top" src="../img/enginnering.jpg" lt="">
             <!-- <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -178,9 +201,7 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    
   </body>
 
 </html>

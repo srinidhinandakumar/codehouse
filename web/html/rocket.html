@@ -80,17 +80,13 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Lion Image</li>
+          <li class="breadcrumb-item active" aria-current="page">Rocket Science</li>
         </ol>
       </nav>
       <div class = "row">
-        <div id = "first" class ="col-lg-4 col-md-4 col-sm-4 col-xs-6"> <img src="../../img/animal_facts.jpeg" style="margin-top:100px;height:200px;width:340px;" lt=""></div>
+        <div id = "first" class ="col-lg-4 col-md-4 col-sm-4 col-xs-6"> <img src="../../img/rocket.jpg" style="margin-top:50px;height:200px;width:300px;" lt=""></div>
         <div id = "js" class ="col-lg-8 col-md-8 col-sm-8 col-xs-6"></div>
       </div>
-     <!--  <div id="js"> -->
-        
-      </div>
-    </div>
     <!-- /.container -->
 
     <!-- Footer -->
@@ -109,8 +105,8 @@
                 
 
           console.log("flare");
-          var margin = {top: 10, right: 100, bottom: 20, left: 120},
-              width = 800 - margin.right - margin.left,
+          var margin = {top: 10, right: 100, bottom: 20, left: 100},
+              width = 700 - margin.right - margin.left,
               height = 400 - margin.top - margin.bottom;
 
           var i = 0,
@@ -129,11 +125,12 @@
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-          d3.json("../data/animal_facts.json", function(error, flare) {
+          d3.json("../data/rocket.json", function(error, flare) {
             if (error) 
             {
               throw error;
             }
+            
             console.log("flare");
             root = flare;
             root.x0 = height / 2;
@@ -182,7 +179,7 @@
                 .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
                 .text(function(d) { return d.name; })
                 .style("fill-opacity", 1e-6)
-                .style("font-size", "15px");
+                .style("font-size", "15px");;
 
             // Transition nodes to their new position.
             var nodeUpdate = node.transition()

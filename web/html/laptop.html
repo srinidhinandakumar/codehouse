@@ -72,6 +72,7 @@
     <!-- Page Content -->
     <div class="container">
 
+      <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
         <center><img class="card-img-top" style="height:70%; width:70%;" src="../images/stem3.jpg" lt="">
         <!-- <p class="lead">Yes, you read that right! STEM can be fun and we will show you why.<br>Click on any of these images to learn more!</p></center> -->
@@ -80,15 +81,12 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Lion Image</li>
+          <li class="breadcrumb-item active" aria-current="page">Laptops and Functions</li>
         </ol>
       </nav>
       <div class = "row">
-        <div id = "first" class ="col-lg-4 col-md-4 col-sm-4 col-xs-6"> <img src="../../img/animal_facts.jpeg" style="margin-top:100px;height:200px;width:340px;" lt=""></div>
+        <div id = "first" class ="col-lg-4 col-md-4 col-sm-4 col-xs-6"> <img src="../../img/laptops.jpeg" style="margin-top:100px;height:200px;width:340px;" lt=""></div>
         <div id = "js" class ="col-lg-8 col-md-8 col-sm-8 col-xs-6"></div>
-      </div>
-     <!--  <div id="js"> -->
-        
       </div>
     </div>
     <!-- /.container -->
@@ -109,9 +107,9 @@
                 
 
           console.log("flare");
-          var margin = {top: 10, right: 100, bottom: 20, left: 120},
-              width = 800 - margin.right - margin.left,
-              height = 400 - margin.top - margin.bottom;
+          var margin = {top: 20, right: 120, bottom: 20, left: 120},
+              width = 960 - margin.right - margin.left,
+              height = 800 - margin.top - margin.bottom;
 
           var i = 0,
               duration = 750,
@@ -129,13 +127,19 @@
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-          d3.json("../data/animal_facts.json", function(error, flare) {
+          d3.json("../data/laptop.json", function(error, flare) {
             if (error) 
             {
               throw error;
             }
+            for (i in flare):{
+              if i["name"] in "laptop":
+                data = i
+                break
+            }
             console.log("flare");
-            root = flare;
+            root = data;
+            
             root.x0 = height / 2;
             root.y0 = 0;
 
@@ -160,7 +164,7 @@
                 links = tree.links(nodes);
 
             // Normalize for fixed-depth.
-            nodes.forEach(function(d) { d.y = d.depth * 100; });
+            nodes.forEach(function(d) { d.y = d.depth * 180; });
 
             // Update the nodes…
             var node = svg.selectAll("g.node")
@@ -181,8 +185,7 @@
                 .attr("dy", ".35em")
                 .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
                 .text(function(d) { return d.name; })
-                .style("fill-opacity", 1e-6)
-                .style("font-size", "15px");
+                .style("fill-opacity", 1e-6);
 
             // Transition nodes to their new position.
             var nodeUpdate = node.transition()
@@ -190,7 +193,7 @@
                 .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
             nodeUpdate.select("circle")
-                .attr("r", 6.5)
+                .attr("r", 4.5)
                 .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
             nodeUpdate.select("text")

@@ -72,6 +72,7 @@
     <!-- Page Content -->
     <div class="container">
 
+      <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
         <center><img class="card-img-top" style="height:70%; width:70%;" src="../images/stem3.jpg" lt="">
         <!-- <p class="lead">Yes, you read that right! STEM can be fun and we will show you why.<br>Click on any of these images to learn more!</p></center> -->
@@ -80,17 +81,13 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Lion Image</li>
+          <li class="breadcrumb-item active" aria-current="page">Birds</li>
         </ol>
       </nav>
       <div class = "row">
-        <div id = "first" class ="col-lg-4 col-md-4 col-sm-4 col-xs-6"> <img src="../../img/animal_facts.jpeg" style="margin-top:100px;height:200px;width:340px;" lt=""></div>
+        <div id = "first" class ="col-lg-4 col-md-4 col-sm-4 col-xs-6"> <img src="../../img/birds.jpeg" style="margin-top:50px;margin-bottom:50px;height:200px;width:300px;" lt=""></div>
         <div id = "js" class ="col-lg-8 col-md-8 col-sm-8 col-xs-6"></div>
-      </div>
-     <!--  <div id="js"> -->
-        
-      </div>
-    </div>
+      </div>    </div>
     <!-- /.container -->
 
     <!-- Footer -->
@@ -129,13 +126,18 @@
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-          d3.json("../data/animal_facts.json", function(error, flare) {
+          d3.json("../data/data.json", function(error, flare) {
             if (error) 
             {
               throw error;
             }
+            for(i in flare):{
+              if i["name"] in "birds":
+                data = i
+                break
+            }
             console.log("flare");
-            root = flare;
+            root = data;
             root.x0 = height / 2;
             root.y0 = 0;
 
@@ -181,8 +183,8 @@
                 .attr("dy", ".35em")
                 .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
                 .text(function(d) { return d.name; })
-                .style("fill-opacity", 1e-6)
-                .style("font-size", "15px");
+                .style("fill-opacity", 1e-6).style("font-size", "15px");
+;
 
             // Transition nodes to their new position.
             var nodeUpdate = node.transition()
