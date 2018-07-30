@@ -1,0 +1,2 @@
+recursive-include WeRStem/templates *
+recursive-include WeRStem/static *
